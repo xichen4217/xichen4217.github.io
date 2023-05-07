@@ -1,35 +1,36 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html>
-<head>
-  <title>My first styled page</title>
-  <link rel="stylesheet" href="mystyle.css">
-</head>
-
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>猜数字</title>
+    <style type="text/css">
+    #body1 {
+      background-color: Aquamarine;
+      color: Crimson;
+      font-family: SimSun;
+      font-size: 150%;
+    }
+    </style>
+  </head>
+  <body>
+  <script type="text/javascript">
+    var ran = parseInt(Math.random()*100);
+	  function guess() {
+		var number = document.getElementById("number").value;
+		if (number < 0 || number > 100) {
+			alert("请输入1到100的数字");
+		} else if (ran == number) {
+			alert("恭喜你猜对了，你猜的数字是" + ran + "，若要继续游戏请刷新页面");
+		} else if (ran > number) {
+			alert("很遗憾，你猜小了");
+		} else if (ran < number) {
+			alert("很遗憾，你猜大了");
+		}
+  }
+</script>
 <body>
-
-<!-- Site navigation menu -->
-<ul class="navbar">
-  <li><a href="index.html">Home page</a>
-  <li><a href="musings.html">Musings</a>
-  <li><a href="town.html">My town</a>
-  <li><a href="links.html">Links</a>
-</ul>
-
-<!-- Main content -->
-<h1>My first styled page</h1>
-
-<p>Welcome to my styled page!
-
-<p>It lacks images, but at least it has style.
-And it has links, even if they don't go
-anywhere&hellip;
-
-<p>There should be more here, but I don't know
-what yet.
-
-<!-- Sign and date the page, it's only polite! -->
-<address>Made 5 April 2004<br>
-  by myself.</address>
-
+<p id="body1">请输入1到100的数字：</p>
+	<input type="text" name="number" id="number">
+	<button type="button" onclick="guess()">提交</button>
 </body>
 </html>
